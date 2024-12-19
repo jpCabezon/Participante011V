@@ -1,0 +1,7 @@
+{
+  "name": "Participante",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Nuevo Integrante al Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Introducir Información</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item>
+      <ion-input type="text" placeholder="Nombre...."
+        label="Ingrese Nombre: " labelPlacement="floating" name="Nombre"
+        [(ngModel)]="registrarse.nombre">
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="text" placeholder="Rut.." 
+        label="Ingrese Rut: " labelPlacement="floating" name="Rut"
+        [(ngModel)]="registrarse.rut">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Email.." 
+        label="Ingrese Email: " labelPlacement="floating" name="email"
+        [(ngModel)]="registrarse.email">
+      </ion-input>
+    </ion-item>
+    
+    <div style="text-align: center; margin-top: 30px;">
+      <ion-button (click)="CrearRegistro()" shape="round" color="primary">
+        Registrarse a Evento 
+      </ion-button>
+    </div>
+  </form>
+
+  <!-- Sección para mostrar el código QR -->
+  <div *ngIf="codigoQR" style="text-align: center; margin-top: 30px;">
+    <qrcode [qrdata]="codigoQR" [width]="256"></qrcode>
+    <p>Código QR generado con éxito</p>
+  </div>
+</ion-content> 

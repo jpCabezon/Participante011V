@@ -1,0 +1,30 @@
+ion-content {
+    --background: #22eec2;
+  }
+
+  .page-login {
+    display: flex;                /* Habilita Flexbox */
+    justify-content: center;       /* Centra horizontalmente */
+    align-items: center;           /* Centra verticalmente */
+    height: 50vh;                 /* Altura total de la pantalla */
+    background-color: #61cf8f;     /* Fondo opcional */
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;              /* Ancho máximo del formulario */
+    padding: 20px;
+    background-color: white;       /* Fondo del formulario */
+    border-radius: 12px;           /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para efecto de elevación */
+  }
+
+  #titulo{
+    display: flex;
+    justify-content: center;
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  

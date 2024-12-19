@@ -1,0 +1,85 @@
+<ion-app>
+  <!-- Menú desplegable (si lo has agregado aquí)--> 
+  <ion-menu side="start" menuId="mainMenu" contentId="mainContent">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/perfil" (click)="closeMenu()">
+          <ion-label>Perfil de Usuario</ion-label>
+        </ion-item>
+        <ion-item routerLink="/registro-eventos" (click)="closeMenu()">
+          <ion-label>Registro de Eventos</ion-label>
+        </ion-item>
+        <ion-item routerLink="/eventos-registrados" (click)="closeMenu()">
+          <ion-label>Eventos Registrados</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-item lines="none" (click)="logout()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-footer> 
+  </ion-menu>
+
+  <!--<ion-menu side="start" menuId="mainMenu" contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home" (click)="closeMenu()">Inicio</ion-item>
+      <ion-item routerLink="/profile" (click)="closeMenu()">Perfil</ion-item>
+      <ion-item routerLink="/settings" (click)="closeMenu()">Configuración</ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item lines="none" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>  
+</ion-menu>
+-->
+
+   El contenido principal de la aplicación 
+   <ion-router-outlet id="mainContent"></ion-router-outlet>
+</ion-app> 
+
+
+<!--<ion-app>
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay">
+    <ion-header mode="md">
+      <ion-toolbar color="tertiary" mode="md">
+        <ion-icon slot="start" size="large" name="person-circle-outline" style="padding-left:10px"></ion-icon> 
+        <ion-title>menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle *ngFor="let m of opciones">
+          <ion-item [routerLink]="m.redirecTo" detail="true">
+            <ion-icon slot="start" [name]="m.icon" slot="start" color="dark"></ion-icon>
+            <ion-label id="etiqueta">{{m.name}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>-->

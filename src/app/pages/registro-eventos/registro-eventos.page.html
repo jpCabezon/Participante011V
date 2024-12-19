@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="regresar()">
+        Volver
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registrarse al evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let e of eventos">
+    <ion-card-header>
+      <ion-card-title>Nombre: {{e.Nombre}}</ion-card-title>
+      <img [src]="e.urlImage" alt="{{e.Nombre}}" />
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <strong>Descripcion: </strong>{{e.Descripcion}}<br>
+        <strong>Fecha:</strong> {{e.fecha}}<br>
+        <strong>Hora:</strong> {{e.Hora}}<br>
+        <strong>Ubicacion:</strong> {{e.Ubicacion}}<br>
+      </p>
+      <ion-button (click)="agregar(e)">
+        Registrarse
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

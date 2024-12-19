@@ -1,0 +1,60 @@
+<!--<ion-menu side="start" menuId="mainMenu" contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home" (click)="closeMenu()">Inicio</ion-item>
+      <ion-item routerLink="/profile" (click)="closeMenu()">Perfil</ion-item>
+      <ion-item routerLink="/settings" (click)="closeMenu()">Configuración</ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item lines="none" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>  
+</ion-menu>
+-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="custom-carousel">
+    <div class="carousel-container">
+      <img [src]="imagenes[currentSlide]" alt="Imagen carrusel" class="carousel-img">
+    </div>
+
+    <!-- Botones para navegar manualmente -->
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+  </div>
+
+  <ion-card *ngFor="let e of eventos" (click)="buscarPost(e)">
+    <ion-card-header>
+      <ion-card-title>Nombre: {{e.Nombre}}</ion-card-title>
+      <img [src]="e.urlImage" alt="{{e.Nombre}}" />
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <strong>Descripcion: </strong>{{e.Descripcion}}<br>
+        <strong>Fecha:</strong> {{e.fecha}}<br>
+        <strong>Hora:</strong>  {{e.Hora}}<br>
+        <strong>Ubicacion:</strong> {{e.Ubicacion}}<br>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

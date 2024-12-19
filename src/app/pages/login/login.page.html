@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="titulo">Bienvenido a IT-EVENT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <form [formGroup]="loginForm">
+  <ion-item>
+    <ion-label position="floating">Usuario: </ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password: </ion-label>
+    <ion-input type="text" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="Login()" expand="block" color="primary" shape="round">
+        Login
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</form> -->
+
+<ion-content class="page-login">
+  <div class="login-form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12"> 
+
+          <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input type="text" placeholder="ingrese username" label="Usuario:" labelPlacement="floating"
+          formControlName="username">
+      </ion-input>
+    </ion-item>
+
+      <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+                  loginForm.get('username')?.touched)">
+        <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+          *Username es obligatorio
+        </div>
+        <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+          *Username debe tener mínimo 6 caracteres
+        </div>
+      </div>
+
+    <ion-item>
+      <ion-input type="password" placeholder="ingrese password" label="Password:" labelPlacement="floating"
+          formControlName="password">
+      </ion-input>
+    </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                loginForm.get('password')?.touched)">
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+        *Password es obligatoria
+      </div>
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+        *Password debe tener mínimo 8 caracteres
+      </div>
+    </div>
+
+
+    <div style="text-align: center; margin-top:30px">
+      <ion-button (click)="Login()" [disabled]="!loginForm.valid" shape="round" color="primary">
+        Login
+      </ion-button> 
+    </div>
+    <div style="text-align: center;">
+      <ion-button (click)="Registrar()"  fill="clear" shape="round">
+        Registrarse
+      </ion-button>
+    </div>
+  </form>
+
+        <!--  <ion-button expand="full" color="secondary" (click)="Registrar()">Registrarse</ion-button>-->
+
+   
+          <ion-button expand="full" color="light" (click)="goToRecuperarPassword()">Recuperar Contraseña</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
